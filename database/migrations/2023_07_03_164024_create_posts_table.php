@@ -22,6 +22,8 @@ return new class extends Migration
         $table->string('profile_name')->nullable();
         $table->string('user_email')->nullable();
         $table->text('body_post')->nullable();
+
+        $table->text('comment_body')->nullable();
     });
 }
 

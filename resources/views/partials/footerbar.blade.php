@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-xs-12 about-company">
-          <h2>About CEDRECS Community Forum</h2>
-          <p class="pr-5 text-white-50">CEDRECS Community Forum is a platform for sharing stories and discussing cyber breaches. Join our community to stay updated and contribute to the conversations.</p>
+          <h2>About CeDReCS Community Forum</h2>
+          <p class="pr-5 text-white-50">CeDReCS Community Forum is a platform for sharing stories and discussing cyber breaches. Join our community to stay updated and contribute to the conversations.</p>
           <p>
             <a href="#"><i class="fab fa-facebook-square mr-1"></i></a>
             <a href="#"><i class="fab fa-linkedin-square"></i></a>
@@ -35,8 +35,8 @@
     </div>
   </div>
 
-  <div class="footer2 container-fluid bg-danger">
-    <p class="mt-3 mb-1">CEDRECS Community &copy; 2023</p>
+  <div class="footer2 container-fluid" style="background-color: #F40105;">
+    <p class="mt-3 mb-1">CeDReCS Community &copy; 2023</p>
   </div>
 
 
@@ -85,6 +85,8 @@
     }
   });
 </script>
+
+
 
 </body>
 </html>

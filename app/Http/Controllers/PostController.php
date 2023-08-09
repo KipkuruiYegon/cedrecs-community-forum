@@ -12,17 +12,43 @@ class PostController extends Controller
     public function create_post(Request $request)
     {
         //create the post to the database
-        $post  = new post;
+        $post  = new Post;
         $post->title_post=$request->title_post;
         $post->category_post=$request->category_post;
         $post->profile_type=$request->profile_type;
         $post->profile_name=$request->profile_name;
         $post->user_email=$request->user_email;
-        $post->body_post=$request->body_post;
+        // $post->body_post=$request->body_post;
+        $post->body_post = $request->input('editor_content');
 
         $post->save();
 
         return redirect('/');
+    }
+
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('upload'))
+
+        {
+
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->
+            getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('postmedia'), $fileName);
+
+            $url  = asset('postmedia/'. $fileName);
+            return response()->json(['fileName' => $fileName, 'uploaded'=> 1
+            , 'url' => $url]);
+
+
+        }
+
+
+
     }
 
     //function to diplay all posts from database shared by users in the forum

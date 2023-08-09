@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,10 +34,27 @@ Route::get('/commentpost', function () {
     return view('commentpost');
 });
 
+Route::get('/communityguidelines', function () {
+    return view('communityguidelines');
+});
+
+// Route::get('/admin', function () {
+//     return view('admin');
+// });
+
+Route::get('/admin/welcomedashboard', function() {
+    return view('admin.welcomedashboard');
+});
+
+
+
 
 //Routes in Controllers
 
 Route::post('/createpost', [PostController::class, 'create_post'])->name('createpost'); // Create a new post
+
+// This route is used to upload files (images,photos,links e.t.c ) to the CKEditor editor when creating the post
+Route::post('/upload', [PostController::class, 'upload'])->name('ckeditor.upload');
 
 Route::get('/', [PostController::class, 'list_post'])->name('list_post'); // Display all posts
 
@@ -50,3 +68,4 @@ Route::get('/showpostwithComments/{postId}', [CommentController::class, 'display
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

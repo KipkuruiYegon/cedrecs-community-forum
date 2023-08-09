@@ -4,25 +4,29 @@
 {{-- Here we can check the post plus comments related to it below --}}
 <div class="container mt-5 mb-4" style="padding-top: 50px;">
   <div class="row">
-    <div class="col-md-9 bg-light">
-      <h6 class="text-center p-2 bg-info text-white">
-        Discussion by <span class="font-italic">{{ $post->profile_name }}</span>
-      </h6>
+    <div class="col-md-8 bg-light">
+      <h5 class="text-center shadow p-2 bg-secondary text-white">
+        Discussion by {{ $post->profile_name }}
+      </h5>
 
-      <div class="container-fluid p-4 mr-2 bg-white">
+      <div class=" container-fluid shadow p-4 mr-2 bg-white">
         <div class="d-flex align-items-center">
           <a class="navbar-brand" href="#">
-            <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1689258857~exp=1689259457~hmac=d1b86e1ddab67660eae9c9badd4d4ef926cdb06014461c2e697c65c285a5daf4" alt="Avatar Logo" style="width: 40px;" class="rounded-pill mr-2">
+            <img src="https://img.freepik.com/premium-photo/woman-wearing-robot-garment_81048-35488.jpg?w=740" alt="Avatar Logo" style="width: 40px;" class="rounded-pill mr-2">
           </a>
-          <h6 class="ms-2 bg-danger-emphasis">{{ $post->profile_name }}, {{ $post->created_at->format('j M Y') }}</h6>
+          <div class="d-flex align-items-center">
+            <h6 class="ms-2 text-danger-emphasis fw-100 text-decoration-underline fw-bold">{{ $post->profile_name }}  </h6><h6 class="ms-2 text-danger-emphasis "> on <i class="bi bi-calendar-check"></i> {{ $post->created_at->format('j M Y') }}</h6>
+          </div>
         </div>
 
+        <div class="postcommentimages p-1 mr-1 bg-white ">
         <h3>{{ $post->title_post }}</h3>
-        <p>{{ $post->body_post }}</p>
+        <p class="">{!! $post->body_post !!}</p>
+        </div>
 
         <div class="d-flex flex-row-reverse">
           <div class="p-2"><a><i class="bi bi-hand-thumbs-up-fill"></i> 5 Upvotes</a></div>
-          <div class="p-2 btn btn-warning"><a class="text-dark" href="{{ url('/') }}"><i class="bi bi-tags-fill"></i> Back to Posts</a></div>
+          <div class="p-2 btn btn-primary"><a class="text-white" href="{{ url('/') }}"><i class="bi bi-tags-fill"></i> Back to Posts</a></div>
         </div>
       </div>
 
@@ -33,8 +37,8 @@
       </h4>
 
       @foreach($comments as $comment)
-      <div class="container-fluid p-4 mr-2 bg-white d-flex flex-row-reverse">
-        <div class="col-md-11 p-3 bg-light">
+      <div class=" container-fluid p-4 mr-2 bg-white d-flex flex-row-reverse">
+        <div class="shadow col-md-11 p-3 bg-light">
           <div class="d-flex align-items-center">
             <a class="navbar-brand" href="#">
               <img src="https://d2xduyqs25ssfe.cloudfront.net/uploads/default/user/default.jpg?v=210" alt="Avatar Logo" style="width: 40px;" class="rounded-pill mr-2">
@@ -49,8 +53,8 @@
       @endforeach
 
       <br>
-      <h5 class="text-center p-2 bg-info text-white">
-        Reply to <span class="font-italic">{{ $post->profile_name }}</span>'s Question
+      <h5 class="text-center p-2 bg-secondary text-white">
+        Reply to {{ $post->profile_name }}'s Post
       </h5>
 
       <div class="container-fluid p-3 bg-white">
@@ -61,7 +65,7 @@
             <select class="form-select" id="inputGroupSelect01" name="profile_type" required>
               <option selected>select...</option>
               <option value="Unshared profile">1. Anonymously</option>
-              <option value="Shared profile">2. To be contacted via email</option>
+              <option value="Shared profile">2. Enter your Name</option>
             </select>
           </div>
           <div class="mb-3">

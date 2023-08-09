@@ -13,7 +13,7 @@
 {{-- Create a post here --}}
 <div class="container mt-5 mb-4" style="padding-top: 50px;">
   <div class="row">
-    <div class="col-sm-9 bg-light">
+    <div class="col-sm-8 bg-light">
       <h2 class="text-center bg-warning text-dark p-2 rounded-lg shadow-sm"></h2>
 
       <div class="container-fluid p-3 bg-white">

@@ -11,15 +11,55 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+  {{-- ckeditor5 --}}
+  <script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/classic/ckeditor.js"></script>
+
+
+
   <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+
+
+
+
+
 </head>
 
 <style>
-  @import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/poppins');
 
-  * {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+* {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+  .container-fluid {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+  .welcome-div {
+    height:300px;
+    background-image: url('https://img.freepik.com/premium-photo/sunrise-panorama-famous-cappadocia-landscape-view-with-lots-hot-air-balloons_160696-1425.jpg?w=1380');
+    background-size: cover; /* This ensures the image covers the entire div */
+    background-position: center; /* Center the image within the div */
+    opacity: ;
+}
+
+.postimages img {
+  max-width: 30%;
+  max-height: 50%;
+  object-fit: contain;
+}
+
+.postcommentimages img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+  .ck-editor__editable_inline{
+    height: 500px;
+    border-radius: 15px;
   }
 
   .pagination li a,
@@ -29,14 +69,14 @@
     }
 
   .footer2 {
-    background: #152F4F;
+    background: #141169;
     color: white;
     text-align: center;
     padding: 5px;
   }
 
   .footer1 {
-    background: #152F4F;
+    background: #141169;
     color: white;
   }
 
@@ -81,16 +121,32 @@
   padding: 10px;
 }
 
+.post-content {
+    overflow: hidden;
+    line-height: 1.5em;
+    max-height: 15em; /* Approximately 10 lines assuming 1.5em line-height */
+    text-overflow: ellipsis;
+  }
+
+  .read-more-link {
+    color: #3137a9;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .full-content {
+    display: none;
+  }
+
 
 </style>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger p-2 fixed-top">
+    <nav class="navbar navbar-expand-lg bg-danger  navbar-light p-2 fixed-top" style="">
         <div class="container">
-          <a class="navbar-brand text-white display- fw-bold" style="font-size: 20px;" href="{{ url('/') }}">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4vr_VixqHPYHKIJwdDrK6vwDx9zwJIGwTBw&usqp=CAU" alt="Avatar Logo" style="width:40px;height: 35px;" class="rounded-pill">
-            CEDRECS
+          <a class="navbar-brand text-white display- fw-bold" style="font-size: 25px;" href="{{ url('/') }}">
+            <img src="https://img.freepik.com/premium-vector/deer-logo-with-geometric-concept_11481-429.jpg?w=740" alt="Avatar Logo" style="width:60px;height: 55px;" class="rounded-circle">
+            CeDReCS
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -110,18 +166,23 @@
             <a class="nav-link text-white fw-bold" href="">Connections</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="">About Us</a>
+            <a class="nav-link text-white fw-bold" href="">About</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="p-2 btn btn-warning text-dark fw-bold">Join Our Community !</button>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0 ms-auto">
           <div class="input-group">
             <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-primary" type="submit">Search</button>
+            <button class="btn btn-warning fw-bold" type="submit">Search</button>
           </div>
         </form>
       </div>
     </div>
   </nav>
+
+
 
 
 
